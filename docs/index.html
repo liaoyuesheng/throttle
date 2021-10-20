@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet"
+          href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/vs.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+    <title>Throttle Examples</title>
+</head>
+<body>
+<div id="scroll-container">
+    <div style="width: 1px;height: 2000px"></div>
+</div>
+<div id="log1" class="log">scrollTop: </div>
+<pre><code class="code language-html" data-for="#demo-js1"></code></pre>
+
+<script type="module" id="demo-js1">
+  // use interval time
+  import throttle from './throttle.esm.js'
+
+  const elLog = document.querySelector('#log1')
+  document.querySelector('#scroll-container').addEventListener('scroll', throttle((event) => {
+    elLog.textContent = 'scrollTop: ' + event.target.scrollTop
+  }, 200))
+</script>
+
+<div id="log2" class="log">scrollTop: </div>
+<pre><code class="code language-html" data-for="#demo-js2"></code></pre>
+
+<script type="module" id="demo-js2">
+  // use animation frame
+  import throttle from './throttle.esm.js'
+
+  const elLog = document.querySelector('#log2')
+  document.querySelector('#scroll-container').addEventListener('scroll', throttle((event) => {
+    elLog.textContent = 'scrollTop: ' + event.target.scrollTop
+  }, true))
+</script>
+
+<script>
+  Array.from(document.querySelectorAll('.code')).forEach((code) => {
+    const target = document.querySelector(code.getAttribute('data-for'))
+    code.textContent = code.classList.contains('language-html') ? target.outerHTML : target.textContent
+    hljs.highlightElement(code)
+  })
+</script>
+</body>
+</html>
