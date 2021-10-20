@@ -1,7 +1,7 @@
 {
   "name": "@liaoys/throttle",
   "version": "1.0.0",
-  "description": "A throttle function base on fixed time or animation frame",
+  "description": "A throttle function base on interval time or animation frame",
   "homepage": "https://liaoyuesheng.github.io/throttle/",
   "author": "liaoyuesheng",
   "license": "ISC",
@@ -24,7 +24,7 @@
   "scripts": {
     "dev": "rollup --config rollup.dev.config.js --watch",
     "build": "rollup -c",
-    "publsh": "npm publish --access public",
+    "publish": "npm publish --access public",
     "lint": "eslint src",
     "lint-fix": "eslint --fix src"
   },
