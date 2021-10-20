@@ -1,7 +1,7 @@
 {
   "name": "@liaoys/throttle",
   "version": "1.0.0",
-  "description": "A throttle function base on fixed time or animation frame",
+  "description": "A throttle function base on interval time or animation frame",
   "homepage": "https://liaoyuesheng.github.io/throttle/",
   "author": "liaoyuesheng",
   "license": "ISC",
